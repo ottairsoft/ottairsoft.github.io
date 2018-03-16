@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="description" content="Over The Top Airsoft Adventures Anglesey"/>
+		<meta name="keywords" content="airsoft,anglesey,skirmish"/>
+		<meta name="author" content="Jake Pryce-Jones"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link href="css/class.css" type="text/css" rel="stylesheet"/>
+		<link href="css/keyframe.css" type="text/css" rel="stylesheet"/>
+		<link href="css/element.css" type="text/css" rel="stylesheet"/>
+		<title>OTT Airsoft Adventures</title>
+	</head>
+	<body>
+		<div class="banner">
+			<h1>OTT Airsoft Adventures</h1>
+      <a href="index.html" class="banner_button">About Us</a>
+			<a href="dates.html" class="banner_button">Skirmish Days</a>
+			<a href="map.html" class="banner_button">Find Us</a>
+			<a href="contact.html" class="banner_button">Contact Us</a>
+		</div>
+		<div class="content_box">
+			<h2>Skirmish Days</h2>
+			<p>We run skirmish days on the first and third Saturdays of every month and the second Sunday of every month. We also do away trips to other airsoft sites around the UK.</p>
+      <p>Our upcoming events are listed below:</p>
+      <div id="eventList"></div>
+		</div>
+		<div class="banner">
+      <a href="index.html" class="banner_button">About Us</a>
+			<a href="dates.html" class="banner_button">Skirmish Days</a>
+			<a href="map.html" class="banner_button">Find Us</a>
+			<a href="contact.html" class="banner_button">Contact Us</a>
+			<br/>
+			<p class="banner">&copy; Copyright Over The Top Airsoft Adventures Anglesey 2018.</p>
+		</div>
+    <script>
+      //Parse JSON
+      var event = [
+        {"date":"20 Jan 2018", "time":"0900", "title":"Skirmish Day"},
+        {"date":"28 Jan 2018", "time":"0900", "title":"Away Trip To Shock &amp; Awe"},
+        {"date":"03 Feb 2018", "time":"0900", "title":"Skirmish Day"},
+        {"date":"11 Feb 2018", "time":"0900", "title":"Skirmish Day"},
+        {"date":"17 Feb 2018", "time":"0930", "title":"Away Trip To SWAT"},
+        {"date":"03 Mar 2018", "time":"0900", "title":"Skirmish Day"},
+        {"date":"11 Mar 2018", "time":"0900", "title":"Skirmish Day"},
+        {"date":"17 Mar 2018", "time":"0900", "title":"Skirmish Day"}
+      ];
+
+      //Create HTML
+      var text = '<table class="dataTable"><tr><th>Date</th><th>Time</th><th>Event</th></tr>';
+      for (var i = 0; i < event.length; i++) {
+        text += '<tr><td>' + event[i].date + '</td><td>' + event[i].time + ' hours</td><td>' + event[i].title + '</td></tr>';
+      }
+      text += '</table>';
+
+      //Insert HTML into document
+      document.getElementById("eventList").innerHTML = text;
+    </script>
+	</body>
+</html>

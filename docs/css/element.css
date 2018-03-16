@@ -1,0 +1,44 @@
+@charset utf-8;
+
+a {
+	color: #82a383;
+}
+
+h1 {
+	text-align: center;
+	font-size: xx-large;
+}
+
+h2 {
+	text-align: center;
+	font-size: x-large;
+}
+
+h3 {
+	text-align: left;
+	font-size: x-large;
+}
+
+html {
+  padding: 0;
+  margin: 0;
+  background-color: #232623;
+	color: #add6ae;
+	font-family: arial;
+	font-size: large;
+	animation-name: fadein;
+	animation-duration: 1s;
+}
+
+img {
+	position: inline-block;
+}
+
+li {
+	size: large;
+}
+
+p {
+	text-align: left;
+	font-size: large;
+}
