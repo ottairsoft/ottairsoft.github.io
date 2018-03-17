@@ -15,9 +15,10 @@
 		<div class="banner">
 			<h1>OTT Airsoft Adventures</h1>
       <a href="index.html" class="banner_button">About Us</a>
-			<a href="dates.html" class="banner_button">Skirmish Days</a>
-			<a href="map.html" class="banner_button">Find Us</a>
 			<a href="contact.html" class="banner_button">Contact Us</a>
+			<a href="map.html" class="banner_button">Find Us</a>
+			<a href="gallery.html" class="banner_button">Gallery</a>
+			<a href="dates.html" class="banner_button">Operations</a>
 		</div>
 		<div class="content_box">
 			<h2>Skirmish Days</h2>
@@ -26,31 +27,32 @@
       <div id="eventList"></div>
 		</div>
 		<div class="banner">
-      <a href="index.html" class="banner_button">About Us</a>
-			<a href="dates.html" class="banner_button">Skirmish Days</a>
-			<a href="map.html" class="banner_button">Find Us</a>
+			<a href="index.html" class="banner_button">About Us</a>
 			<a href="contact.html" class="banner_button">Contact Us</a>
+			<a href="map.html" class="banner_button">Find Us</a>
+			<a href="gallery.html" class="banner_button">Gallery</a>
+			<a href="dates.html" class="banner_button">Operations</a>
 			<br/>
 			<p class="banner">&copy; Copyright Over The Top Airsoft Adventures Anglesey 2018.</p>
 		</div>
-    <script>
-      //Parse JSON
-      var event = [
-        {"date":"17 Mar 2018", "time":"0900", "title":"Skirmish Day"},
-		{"date":"24 Mar 2018", "time":"0900", "title":"Build Day"},
-		{"date":"25 Mar 2018", "time":"0900", "title":"Away Trip to Ex-Site"},
-		{"date":"28 - 29 Apr 2018", "time":"0900", "title":"Operation Dragon Claw I (Milsim)"}
-      ];
-
-      //Create HTML
-      var text = '<table class="dataTable"><tr><th>Date</th><th>Time</th><th>Event</th></tr>';
-      for (var i = 0; i < event.length; i++) {
-        text += '<tr><td>' + event[i].date + '</td><td>' + event[i].time + ' hours</td><td>' + event[i].title + '</td></tr>';
-      }
-      text += '</table>';
-
-      //Insert HTML into document
-      document.getElementById("eventList").innerHTML = text;
-    </script>
 	</body>
+	<script>
+		//Parse JSON
+		var event = [
+			{"date":"17 Mar 2018", "time":"0900", "title":"Skirmish Day"},
+			{"date":"24 Mar 2018", "time":"0900", "title":"Build Day"},
+			{"date":"25 Mar 2018", "time":"0900", "title":"Away Trip to Ex-Site"},
+			{"date":"28 - 29 Apr 2018", "time":"0900", "title":"Operation Dragon Claw I (Milsim)"}
+		];
+
+		//Create HTML
+		var text = '<table class="dataTable"><tr><th>Date</th><th>Time</th><th>Event</th></tr>';
+		for (var i = 0; i < event.length; i++) {
+			text += '<tr><td>' + event[i].date + '</td><td>' + event[i].time + ' hours</td><td>' + event[i].title + '</td></tr>';
+		}
+		text += '</table>';
+
+		//Insert HTML into document
+		document.getElementById("eventList").innerHTML = text;
+	</script>
 </html>
