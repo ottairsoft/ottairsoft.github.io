@@ -35,33 +35,33 @@
 			<br/>
 			<p class="banner">&copy; Copyright Over The Top Airsoft Adventures Anglesey 2018.</p>
 		</div>
-	</body>
-	<script>
-		//Parse JSON
-		 var request = new XMLHttpRequest();
-		 request.open("GET", "json/gallery.json", false);
-		 request.send(null)
-		 var image = JSON.parse(request.responseText);
+		<script>
+			//Parse JSON
+			 var request = new XMLHttpRequest();
+			 request.open("GET", "json/gallery.json", false);
+			 request.send(null)
+			 var image = JSON.parse(request.responseText);
 
-		//Calculate how many rows there should be
-		var noRows = Math.floor(image.length / 3);
-		if (image.length % 3 != 0) {
-			noRows++;
-		}
-
-		//Put images into table
-		var text = '<table>';
-		for (i = 0; i < noRows; i++) {
-			for (j = 0; j < 3; j++) {
-				if (3 * i + j >= image.length) {
-					break;
-				} else {
-					text += '<td><table><tr><td width="30%"><a href="' + image[3 * i + j].image + '"><image class="gallery_image" src="' + image[3 * i + j].thumbnail + '"/></a></td></tr></table></td>';
-				}
+			//Calculate how many rows there should be
+			var noRows = Math.floor(image.length / 3);
+			if (image.length % 3 != 0) {
+				noRows++;
 			}
-			text += '</tr>';
-		}
-		text += '</table>';
-		document.getElementById('gallery').innerHTML = text;
-	</script>
+
+			//Put images into table
+			var text = '<table>';
+			for (i = 0; i < noRows; i++) {
+				for (j = 0; j < 3; j++) {
+					if (3 * i + j >= image.length) {
+						break;
+					} else {
+						text += '<td><table><tr><td width="30%"><a href="' + image[3 * i + j].image + '"><image class="gallery_image" src="' + image[3 * i + j].thumbnail + '"/></a></td></tr></table></td>';
+					}
+				}
+				text += '</tr>';
+			}
+			text += '</table>';
+			document.getElementById('gallery').innerHTML = text;
+		</script>
+	</body>
 </html>

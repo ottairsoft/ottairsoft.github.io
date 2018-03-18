@@ -35,22 +35,22 @@
 			<br/>
 			<p class="banner">&copy; Copyright Over The Top Airsoft Adventures Anglesey 2018.</p>
 		</div>
+		<script>
+			//Parse JSON
+			 var request = new XMLHttpRequest();
+			 request.open("GET", "json/event.json", false);
+			 request.send(null)
+			 var event = JSON.parse(request.responseText);
+
+			//Create HTML
+			var text = '<table class="dataTable"><tr><th>Date</th><th>Time</th><th>Event</th></tr>';
+			for (var i = 0; i < event.length; i++) {
+				text += '<tr><td>' + event[i].date + '</td><td>' + event[i].time + ' hours</td><td>' + event[i].title + '</td></tr>';
+			}
+			text += '</table>';
+
+			//Insert HTML into document
+			document.getElementById("eventList").innerHTML = text;
+		</script>
 	</body>
-	<script>
-		//Parse JSON
-	   var request = new XMLHttpRequest();
-	   request.open("GET", "json/event.json", false);
-	   request.send(null)
-	   var event = JSON.parse(request.responseText);
-
-		//Create HTML
-		var text = '<table class="dataTable"><tr><th>Date</th><th>Time</th><th>Event</th></tr>';
-		for (var i = 0; i < event.length; i++) {
-			text += '<tr><td>' + event[i].date + '</td><td>' + event[i].time + ' hours</td><td>' + event[i].title + '</td></tr>';
-		}
-		text += '</table>';
-
-		//Insert HTML into document
-		document.getElementById("eventList").innerHTML = text;
-	</script>
 </html>
