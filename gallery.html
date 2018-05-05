@@ -36,16 +36,29 @@
 			<p class="banner">&copy; Copyright Over The Top Airsoft Adventures Anglesey 2018.</p>
 		</div>
 		<script>
+			//Returns a pseudorandom integer such that 0 < n < ceiling
+			function randInt(ceiling) {
+				return Math.ceil(Math.random() * 1000000) % ceiling
+			}
+
 			//Parse JSON
-			 var request = new XMLHttpRequest();
-			 request.open("GET", "json/gallery.json", false);
-			 request.send(null)
-			 var image = JSON.parse(request.responseText);
+			var request = new XMLHttpRequest();
+			request.open("GET", "json/gallery.json", false);
+			request.send(null)
+			var image = JSON.parse(request.responseText);
 
 			//Calculate how many rows there should be
 			var noRows = Math.floor(image.length / 3);
 			if (image.length % 3 != 0) {
 				noRows++;
+			}
+
+			//Pseudorandomly permute image array
+			for (i = 0; i < image.length; i++) {
+				var randomIndex = randInt(image.length);
+				var swap = image[i];
+				image[i] = image[randomIndex];
+				image[randomIndex] = swap;
 			}
 
 			//Put images into table
@@ -55,7 +68,11 @@
 					if (3 * i + j >= image.length) {
 						break;
 					} else {
-						text += '<td><table><tr><td width="30%"><a href="' + image[3 * i + j].image + '"><image class="gallery_image" src="' + image[3 * i + j].thumbnail + '"/></a></td></tr></table></td>';
+						text += '<td><table><tr><td width="30%"><a href="';
+						text += image[3 * i + j].image;
+						text += '"><image class="gallery_image" src="';
+						text += image[3 * i + j].thumbnail;
+						text += '"/></a></td></tr></table></td>';
 					}
 				}
 				text += '</tr>';
