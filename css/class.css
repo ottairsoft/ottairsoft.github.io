@@ -40,7 +40,7 @@
 }
 
 .galleryImage {
-	animation-duration: 1s;
+	animation-duration: 3s;
 	animation-name: fadeIn;
 	border-radius: 4px;
 	height: 100%;

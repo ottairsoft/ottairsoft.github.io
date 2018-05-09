@@ -20,8 +20,6 @@ h3 {
 }
 
 html {
-	animation-duration: 1s;
-	animation-name: fadeIn;
 	background-color: #232623;
 	color: #add6ae;
 	font-family: arial;
