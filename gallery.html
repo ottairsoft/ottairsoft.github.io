@@ -41,11 +41,17 @@
 				return Math.ceil(Math.random() * 1000000) % ceiling
 			}
 
-			//Parse JSON
-			var request = new XMLHttpRequest();
-			request.open("GET", "json/gallery.json", false);
-			request.send(null)
-			var image = JSON.parse(request.responseText);
+			//Load images and thumbnails into array
+			var numImages = 30;
+			var imageJSON = "[";
+			for (i = 0; i < numImages; i++) {
+				imageJSON += "{\"image\":\"img/image" + i + ".jpg\", \"thumbnail\":\"img/thumbnail" + i + ".jpg\"}";
+				if (i != numImages - 1) {
+					imageJSON += ",";
+				}
+			}
+			imageJSON += "]";
+			var image = JSON.parse(imageJSON);
 
 			//Calculate how many rows there should be
 			var noRows = Math.floor(image.length / 3);
