@@ -5,29 +5,29 @@ a {
 }
 
 h1 {
-	text-align: center;
 	font-size: xx-large;
+	text-align: center;
 }
 
 h2 {
-	text-align: center;
 	font-size: x-large;
+	text-align: center;
 }
 
 h3 {
-	text-align: left;
 	font-size: x-large;
+	text-align: left;
 }
 
 html {
-  padding: 0;
-  margin: 0;
-  background-color: #232623;
+	animation-duration: 1s;
+	animation-name: fadeIn;
+	background-color: #232623;
 	color: #add6ae;
 	font-family: arial;
 	font-size: large;
-	animation-name: fadein;
-	animation-duration: 1s;
+  margin: 0;
+  padding: 0;
 }
 
 img {
@@ -39,8 +39,8 @@ li {
 }
 
 p {
-	text-align: left;
 	font-size: large;
+	text-align: left;
 }
 
 table {

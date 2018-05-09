@@ -1,6 +1,6 @@
 @charset utf-8;
 
-@keyframes fadein{
+@keyframes fadeIn{
 	from {
 		opacity: 0;
 	}
