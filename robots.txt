@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: .gitattributes
+Disallow: _config.yml
+Disallow: /css/
+Disallow: /json/
