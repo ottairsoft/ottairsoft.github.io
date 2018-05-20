@@ -10,7 +10,7 @@
   		gtag('js', new Date());
   		gtag('config', 'UA-119495723-1');
 		</script>
-		
+
 		<meta charset="UTF-8"/>
 		<meta name="author" content="Jake Pryce-Jones"/>
 		<meta name="description" content="Over The Top Airsoft Adventures Anglesey (OTT Airsoft) Official Website"/>
@@ -26,12 +26,12 @@
 		<link href="css/element.css" type="text/css" rel="stylesheet"/>
 		<link rel="icon" href="img/logo.jpg">
 
-		<title>OTT Airsoft Adventures</title>
+		<title>OTT Airsoft Club</title>
 	</head>
 
 	<body>
 		<div class="banner">
-			<h1>OTT Airsoft Adventures</h1>
+			<h1>OTT Airsoft Club</h1>
       <a href="index.html" class="bannerButton">About Us</a>
 			<a href="contact.html" class="bannerButton">Contact Us</a>
 			<a href="map.html" class="bannerButton">Find Us</a>
@@ -53,20 +53,156 @@
 			<a href="gallery.html" class="bannerButton">Gallery</a>
 			<a href="dates.html" class="bannerButton">Operations</a>
 			<br/>
-			<p class="banner">&copy; Copyright Over The Top Airsoft Adventures Anglesey 2018.</p>
+			<p class="banner">&copy; Copyright Over The Top Airsoft Club 2018.</p>
 		</div>
 
 		<script>
+			const MONTH = new Array("JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC");
+			const WEEKDAY = new Array("SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT");
+
+			//Returns true if timestamp is in BST, false if not
+			function isBST(timestamp) {
+				switch (timestamp.getUTCFullYear()) {
+					case 2017:
+						if ((timestamp >= new Date("2017-03-26 01:00:00Z")) && (timestamp <= new Date("2017-10-29 01:00:00Z"))) {
+							return true;
+						} else {
+							return false;
+						}
+						break;
+
+					case 2018:
+						if ((timestamp >= new Date("2018-03-25 01:00:00Z")) && (timestamp <= new Date("2018-10-28 01:00:00Z"))) {
+							return true;
+						} else {
+							return false;
+						}
+						break;
+
+					case 2019:
+						if ((timestamp >= new Date("2019-03-31 01:00:00Z")) && (timestamp <= new Date("2019-10-27 01:00:00Z"))) {
+							return true;
+						} else {
+							return false;
+						}
+						break;
+
+					default:
+						return false;
+				}
+			}
+
+			//Returns a string detailing the date and time
+			function formatDateTime(timestamp) {
+				var output = "";
+
+				//Daylight saving time
+				var daylightSaving = isBST(timestamp);
+				if (daylightSaving) {
+					var hours = timestamp.getUTCHours() + 1;
+				} else {
+					var hours = timestamp.getUTCHours();
+				}
+
+				//Assemble date
+				output += WEEKDAY[timestamp.getUTCDay()];
+				output += " ";
+				if (timestamp.getUTCDate() < 10) {
+					output += "0" + timestamp.getUTCDate();
+				} else {
+					output += timestamp.getUTCDate();
+				}
+				output += " ";
+				output += MONTH[timestamp.getUTCMonth()];
+				output += " ";
+				output += timestamp.getUTCFullYear();
+
+				output += ", ";
+
+				//Assemble time
+				if (hours < 10) {
+					output += "0" + hours;
+				} else {
+					output += hours;
+				}
+				output += ":";
+				if (timestamp.getUTCMinutes() < 10) {
+					output += "0" + timestamp.getUTCMinutes();
+				} else {
+					output += timestamp.getUTCMinutes();
+				}
+
+				if (daylightSaving) {
+					output += " hours BST";
+				} else {
+					output += " hours GMT";
+				}
+
+				return output;
+			}
+
+			//Returns a string detailing the time
+			function formatTime(timestamp) {
+				var output = "";
+
+				//Daylight saving time
+				var daylightSaving = isBST(timestamp);
+				if (daylightSaving) {
+					var hours = timestamp.getUTCHours() + 1;
+				} else {
+					var hours = timestamp.getUTCHours();
+				}
+
+				//Assemble time
+				if (hours < 10) {
+					output += "0" + hours;
+				} else {
+					output += hours;
+				}
+				output += ":";
+				if (timestamp.getUTCMinutes() < 10) {
+					output += "0" + timestamp.getUTCMinutes();
+				} else {
+					output += timestamp.getUTCMinutes();
+				}
+
+				if (daylightSaving) {
+					output += " hours BST";
+				} else {
+					output += " hours GMT";
+				}
+
+				return output;
+			}
+
 			//Parse JSON
 			 var request = new XMLHttpRequest();
 			 request.open("GET", "json/event.json", false);
 			 request.send(null)
 			 var event = JSON.parse(request.responseText);
+			 for (var i = 0; i < event.length; i++) {
+				 event[i].start = new Date(event[i].start);
+				 event[i].end = new Date(event[i].end);
+			 }
+
+			 //Sort events by start timestamp
+			 event.sort(
+				 function(a, b) {
+					 return a.start - b.start;
+				 }
+			 );
 
 			//Create HTML
-			var text = '<table class="dataTable"><tr><th>Date</th><th>Time</th><th>Event</th></tr>';
+			var currentDate = new Date();
+			var text = '<table class="dataTable"><tr><th>Event</th><th>Start</th><th>End</th></tr>';
 			for (var i = 0; i < event.length; i++) {
-				text += '<tr><td>' + event[i].date + '</td><td>' + event[i].time + ' hours</td><td>' + event[i].title + '</td></tr>';
+				if (event[i].end > currentDate) {
+					if (event[i].start.getDay() != event[i].end.getDay()) {
+						text += '<tr><td>' + event[i].title + '</td><td>' + formatDateTime(event[i].start) + '</td><td>' + formatDateTime(event[i].end) + '</td></tr>';
+					} else {
+						text += '<tr><td>' + event[i].title + '</td><td>' + formatDateTime(event[i].start) + '</td><td>' + formatTime(event[i].end) + '</td></tr>';
+					}
+				}
 			}
 			text += '</table>';
 
