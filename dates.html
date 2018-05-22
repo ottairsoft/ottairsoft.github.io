@@ -197,13 +197,22 @@
 
 			//Create HTML
 			var currentDate = new Date();
+			var printedFirstRow = false;
 			var text = '<table class="dataTable"><tr><th>Event</th><th>Start</th><th>End</th></tr>';
 			for (var i = 0; i < event.length; i++) {
 				if (event[i].end > currentDate) {
+					if (i > 0) {
+						if ((event[i].start.getMonth() != event[i - 1].start.getMonth()) && (printedFirstRow)) {
+							text += "<tr><td><br/></td></tr>";
+						}
+					}
+
 					if (event[i].start.getDay() != event[i].end.getDay()) {
 						text += '<tr><td>' + event[i].title + '</td><td>' + formatDateTime(event[i].start) + '</td><td>' + formatDateTime(event[i].end) + '</td></tr>';
+						printedFirstRow = true;
 					} else {
 						text += '<tr><td>' + event[i].title + '</td><td>' + formatDateTime(event[i].start) + '</td><td>' + formatTime(event[i].end) + '</td></tr>';
+						printedFirstRow = true;
 					}
 				}
 			}
