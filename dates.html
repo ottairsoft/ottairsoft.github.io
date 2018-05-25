@@ -211,7 +211,13 @@
 						text += '<tr><td>' + event[i].title + '</td><td>' + formatDateTime(event[i].start) + '</td><td>' + formatDateTime(event[i].end) + '</td></tr>';
 						printedFirstRow = true;
 					} else {
-						text += '<tr><td>' + event[i].title + '</td><td>' + formatDateTime(event[i].start) + '</td><td>' + formatTime(event[i].end) + '</td></tr>';
+						if (event[i].title == "Skirmish Day") {
+							text += '<tr><td><a href="skirmishDays.html">' + event[i].title + '</a></td><td>' + formatDateTime(event[i].start) + '</td><td>' + formatTime(event[i].end) + '</td></tr>';
+						} else if (event[i].title == "Mission Day") {
+							text += '<tr><td><a href="missionDays.html">' + event[i].title + '</a></td><td>' + formatDateTime(event[i].start) + '</td><td>' + formatTime(event[i].end) + '</td></tr>';
+						} else {
+								text += '<tr><td>' + event[i].title + '</td><td>' + formatDateTime(event[i].start) + '</td><td>' + formatTime(event[i].end) + '</td></tr>';
+						}
 						printedFirstRow = true;
 					}
 				}

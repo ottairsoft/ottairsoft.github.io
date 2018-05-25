@@ -3,3 +3,5 @@ Disallow: *.gitattributes$
 Disallow: *_config.yml$
 Disallow: */css/*$
 Disallow: */json/*$
+Disallow: */skirmishDays.html$
+Disallow: */missionDays.html$
