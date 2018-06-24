@@ -1,0 +1,11 @@
+/* TEAM */
+Webmaster & Developer
+  Name: Jake Pryce-Jones
+  Email: prycejonesjake@gmail.com
+  Education: Bangor University (Computer Science)
+  Location: United Kingdom
+
+/* SITE */
+Last update: 2018/06/24
+Standards: CSS3, HTML5, Javascript
+Software: Atom, Github Desktop, Microsoft Paint, Microsoft Photos
