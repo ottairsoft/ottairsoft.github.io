@@ -24,8 +24,7 @@
 }
 
 .bannerButton:hover {
-	background-color: #316032;
-	color: #add6ae;
+	opacity: 0.5;
 }
 
 .contentBox {
@@ -40,15 +39,14 @@
 }
 
 .galleryImage {
-	animation-duration: 3s;
-	animation-name: fadeIn;
 	border-radius: 4px;
 	height: 100%;
 	width: 100%;
+	opacity: 0.8;
 }
 
 .galleryImage:hover {
-	box-shadow: 0 0 30px #555555;
+	opacity: 1;
 }
 
 .map {
