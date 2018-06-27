@@ -24,6 +24,7 @@
 }
 
 .bannerButton:hover {
+	color: #316032;
 	opacity: 0.5;
 }
 

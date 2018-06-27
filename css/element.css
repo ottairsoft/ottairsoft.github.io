@@ -4,6 +4,10 @@ a {
 	color: #82a383;
 }
 
+a:hover {
+	color: #add6ae;
+}
+
 h1 {
 	font-size: xx-large;
 	text-align: center;
