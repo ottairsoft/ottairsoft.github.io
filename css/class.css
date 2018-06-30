@@ -1,19 +1,20 @@
 @charset utf-8;
 
 .banner {
-	background-color: #316032;
+	background-color: #000000;
 	border-radius: 4px;
-	color: #add6ae;
+	color: #ffffff;
 	margin: 4px;
+	opacity: 0.8;
 	padding: 4px;
 	text-align: center;
 }
 
 .bannerButton {
-	background-color: #add6ae;
+	background-color: #ffffff;
 	border: none;
 	border-radius: 4px;
-	color: #316032;
+	color: #000000;
 	display: inline-block;
 	float: center;
 	font-size: x-large;
@@ -24,12 +25,15 @@
 }
 
 .bannerButton:hover {
-	color: #316032;
 	opacity: 0.5;
 }
 
 .contentBox {
+	background-color: #000000;
+	border-radius: 4px;
+	color: #ffffff;
 	margin: 4px;
+	opacity: 0.8;
 	padding: 4px;
 }
 
@@ -43,11 +47,6 @@
 	border-radius: 4px;
 	height: 100%;
 	width: 100%;
-	opacity: 0.8;
-}
-
-.galleryImage:hover {
-	opacity: 1;
 }
 
 .map {

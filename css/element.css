@@ -1,11 +1,11 @@
 @charset utf-8;
 
 a {
-	color: #82a383;
+	color: #ffffff;
 }
 
-a:hover {
-	color: #add6ae;
+a:visited {
+	color: #ffffff;
 }
 
 h1 {
@@ -24,8 +24,8 @@ h3 {
 }
 
 html {
-	background-color: #232623;
-	color: #add6ae;
+	background: url(../img/background0.jpg) no-repeat center fixed;
+	background-size: cover;
 	font-family: arial;
 	font-size: large;
   margin: 0;
