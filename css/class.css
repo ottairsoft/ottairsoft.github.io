@@ -28,7 +28,7 @@
 	opacity: 0.5;
 }
 
-.bannerButton:visited {
+a.bannerButton:visited {
 	color: #ffffff;
 }
 
