@@ -1,10 +1,18 @@
 @charset utf-8;
 
 .banner {
+	animation-name: fadeIn;
+	animation-duration: 1s;
 	background-color: #000000;
 	border-radius: 4px;
 	color: #ffffff;
-	margin: 4px;
+	display: block;
+	float: center;
+	margin-bottom: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	max-width: 900px;
 	opacity: 0.8;
 	padding: 4px;
 	text-align: center;
@@ -18,7 +26,7 @@
 	display: inline-block;
 	float: center;
 	font-size: x-large;
-	margin-top: 4px;
+	margin-top: 5px;
 	padding: 4px 8px;
 	text-align: center;
 	text-decoration: none;
@@ -28,25 +36,27 @@
 	opacity: 0.5;
 }
 
-/*
-a.bannerButton:visited {
-	color: #ffffff;
-}
-*/
-
-.contentBox {
-	background-color: #000000;
-	border-radius: 4px;
-	color: #ffffff;
-	margin: 4px;
-	opacity: 0.8;
-	padding: 4px;
-}
-
 .dataTable {
 	border-collapse: collapse;
 	text-align: left;
 	width: 100%;
+}
+
+.galleryBox {
+	animation-name: fadeIn;
+	animation-duration: 1s;
+	background-color: #000000;
+	border-radius: 4px;
+	color: #ffffff;
+	display: block;
+	float: center;
+	margin-bottom: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	max-width: 900px;
+	opacity: 0.8;
+	padding: 4px;
 }
 
 .galleryImage {
@@ -60,4 +70,36 @@ a.bannerButton:visited {
 	border-radius: 4px;
 	height: 500px;
 	width: 100%;
+}
+
+.mapBox {
+	animation-name: fadeIn;
+	animation-duration: 1s;
+	background-color: #000000;
+	border-radius: 4px;
+	color: #ffffff;
+	display: block;
+	float: center;
+	margin-bottom: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	max-width: 900px;
+}
+
+.textBox {
+	animation-name: fadeIn;
+	animation-duration: 1s;
+	background-color: #000000;
+	border-radius: 4px;
+	color: #ffffff;
+	display: block;
+	float: center;
+	margin-bottom: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	max-width: 900px;
+	opacity: 0.8;
+	padding: 4px;
 }
