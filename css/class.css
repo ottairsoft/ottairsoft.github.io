@@ -62,7 +62,7 @@
 .galleryImage {
 	border-radius: 4px;
 	height: auto;
-	width: auto;
+	width: 100%;
 }
 
 .map {
