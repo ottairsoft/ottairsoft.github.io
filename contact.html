@@ -12,6 +12,25 @@
 			ga('set', 'anonymizeIp', true);
 		</script>
 
+		<script>
+			//Runs if the user accepts the GDPR notice
+			//Hides the notice and stores the decision
+			function acceptGDPR() {
+				document.cookie = "AcceptedGDPR=true"
+				var GDPR = document.getElementById("GDPR");
+				GDPR.style.display = "none";
+			}
+
+			//Checks if the GDPR notice has been accepted
+			//Hides the notice if it has
+			function checkGDPR() {
+				var cookie = document.cookie.split(";")[0];
+				if (cookie == "AcceptedGDPR=true") {
+					GDPR.style.display = "none";
+				}
+			}
+		</script>
+
 		<meta charset="UTF-8"/>
 		<meta name="author" content="Jake Pryce-Jones"/>
 		<meta name="description" content="Over The Top Airsoft Adventures Anglesey (OTT Airsoft) Official Website"/>
@@ -31,7 +50,7 @@
 		<title>OTT Airsoft Club</title>
 	</head>
 
-	<body>
+	<body onload="checkGDPR()">
 		<div class="banner">
 			<h1>OTT Airsoft Club</h1>
       <a href="index.html" class="bannerButton">About Us</a>
@@ -40,6 +59,16 @@
 			<a href="map.html" class="bannerButton">Find Us</a>
 			<a href="gallery.html" class="bannerButton">Gallery</a>
 			<a href="prices.html" class="bannerButton">Prices</a>
+		</div>
+
+		<div id="GDPR" class="noticeBox">
+			<h2>GDPR Notice</h2>
+			<p>This site makes use of Google Analytics and cookies to help improve your user experience.</P>
+			<p>By using this site, you agree to your IP address and information about your browser being stored and processed by Google Analytics.</p>
+			<p>For more information about Google Analytics, visit <a href="https://privacy.google.com/businesses/compliance">https://privacy.google.com/businesses/compliance</a>.</p>
+
+			<button onclick="acceptGDPR()">I Agree</a>
+			<button onclick="window.history.back()">Go Back</a>
 		</div>
 
 		<div class="textBox">

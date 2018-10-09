@@ -87,6 +87,24 @@
 	max-width: 900px;
 }
 
+.noticeBox {
+	animation-name: fadeIn;
+	animation-duration: 1s;
+	background-color: #000000;
+	border-radius: 4px;
+	color: #ffffff;
+	display: block;
+	float: center;
+	margin-bottom: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	max-width: 900px;
+	opacity: 0.8;
+	padding: 4px;
+	text-align: center;
+}
+
 .textBox {
 	animation-name: fadeIn;
 	animation-duration: 1s;
