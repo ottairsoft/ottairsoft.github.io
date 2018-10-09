@@ -63,11 +63,11 @@
 		<script>
 			//Returns a pseudorandom integer such that 0 < n < ceiling
 			function randInt(ceiling) {
-				return Math.ceil(Math.random() * 1000000) % ceiling
+				return Math.ceil(Math.random() * 1000000) % ceiling;
 			}
 
 			//Load images and thumbnails into array
-			var numImages = 41;
+			var numImages = 49;
 			var imageJSON = "[";
 			for (i = 0; i < numImages; i++) {
 				imageJSON += "{\"image\":\"img/image" + i + ".jpg\", \"thumbnail\":\"img/thumbnail" + i + ".jpg\"}";
