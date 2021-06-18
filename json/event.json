@@ -79,5 +79,9 @@
   {"title":"Mission Day", "start":"2019-12-07 09:00:00Z", "end":"2019-12-07 15:30:00Z"},
   {"title":"Skirmish Day", "start":"2019-12-15 09:00:00Z", "end":"2019-12-15 15:30:00Z"},
   {"title":"Xmas Game", "start":"2019-12-21 09:00:00Z", "end":"2019-12-21 15:30:00Z"},
-  {"title":"Skirmish Day", "start":"2019-12-29 09:00:00Z", "end":"2019-12-29 15:30:00Z"}
+  {"title":"Skirmish Day", "start":"2019-12-29 09:00:00Z", "end":"2019-12-29 15:30:00Z"},
+  
+  {"title":"Skirmish Day", "start":"2021-07-03 09:00:00Z", "end":"2021-07-03 15:30:00Z"},
+  {"title":"Skirmish Day", "start":"2021-07-11 09:00:00Z", "end":"22021-07-11 15:30:00Z"},
+  {"title":"Skirmish Day", "start":"2021-07-17 09:00:00Z", "end":"2021-07-17 15:30:00Z"}
 ]
